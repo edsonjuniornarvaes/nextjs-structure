@@ -8,11 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@material-ui/core": "^5.0.0-alpha.26",
     "bootstrap": "^4.6.0",
+    "namor": "^2.0.2",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-bootstrap": "^1.5.0",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-table": "^7.6.3",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "react-toastify": "^7.0.3"

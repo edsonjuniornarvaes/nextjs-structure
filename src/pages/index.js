@@ -9,15 +9,12 @@ export default function Home() {
       <Head>
         <title>Next.js | Login</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" 
-          href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
-          crossorigin="anonymous"/>
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h5 className={styles.title}>
           Faça seu login
-        </h1>
+        </h5>
         <div className={styles.grid}>
           <Login />
         </div>

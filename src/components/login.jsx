@@ -7,37 +7,36 @@ import { toast } from 'react-toastify';
 export default function Login() {
 
   const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');
 
-const onLogin = (e) => {
-  e.preventDefault();
-  
-  fetch(`http://api.emarketplace.local/admin/login`, {
-    method: 'POST',
-    mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        'Access-Control-Allow-Origin': '*',
-      },
-    body: JSON.stringify({
-      email,
-      password
-    }),
-  }).then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-      if (data) {
-        if (data.access_token) {
-          Router.push('/home')
-          return toast.success('Login feito com sucesso!');
+  const onLogin = (e) => {
+    e.preventDefault();
+    
+    fetch(`http://api.emarketplace.local/admin/login`, {
+      method: 'POST',
+      mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          'Access-Control-Allow-Origin': '*',
+        },
+      body: JSON.stringify({
+        email,
+        password
+      }),
+    }).then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data) {
+          if (data.access_token) {
+            Router.push('/home');
+            return toast.success('Login feito com sucesso!');
+          }
+
+          return toast.error(data.error.message);
         }
-        data.map((erro) => {
-          return toast.error(erro);
-        })
-      }
-    }).catch(function(error) {
-      return toast.error(error);
-    });
+      }).catch(function(error) {
+        return toast.error(error);
+      });
   }
 
 	return (
@@ -63,8 +62,8 @@ const onLogin = (e) => {
 				<Form.Control 
           type="password" 
           placeholder="Informe sua senha" 
-          onChange={(e) => { setPassword(e.target.value) }}
           value={password}
+          onChange={(e) => { setPassword(e.target.value) }}
         />
 			</Form.Group>
 			<Button 
