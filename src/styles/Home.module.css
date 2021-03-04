@@ -33,12 +33,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: inherit;
-  text-decoration: none;
-}
-
-.footer a span {
-  color: #0070f3;
 }
 
 .title a {

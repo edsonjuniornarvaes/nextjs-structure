@@ -12,7 +12,7 @@ export default function Login() {
   const onLogin = (e) => {
     e.preventDefault();
     
-    fetch(`http://api.emarketplace.local/admin/login`, {
+    fetch(``, {
       method: 'POST',
       mode: 'cors',
         headers: {

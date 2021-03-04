@@ -21,13 +21,13 @@ export default function FormUser({ idUser }) {
 
   //Buscar dados usuário
   const getData = (idUser) => {
-    fetch(`http://api.emarketplace.local/admin/users/${idUser}`, {
+    fetch(`users/${idUser}`, {
       method: 'GET',
       mode: 'cors',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
           'Access-Control-Allow-Origin': '*',
-          'Authorization': 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLmVtYXJrZXRwbGFjZS5sb2NhbC9hZG1pbi9sb2dpbiIsImlhdCI6MTYxNDg2Mjc4NCwiZXhwIjoxNjE0OTA1OTg0LCJuYmYiOjE2MTQ4NjI3ODQsImp0aSI6InE5NzRFQnJJSnhGUGs2aDIiLCJzdWIiOjIsInBydiI6IjU4MzFmMzc2NzAwYTU5ZjA2ZDNjYTc1MThjMDAyMTUyY2Y1YmU3ODkifQ.Fyl9wG9PLZEMiv-o_uIfSzYZ9b-E6w8v-CycPs4D0us'
+          'Authorization': ''
         },
     }).then((res) => res.json())
       .then((data) => {
@@ -44,13 +44,13 @@ export default function FormUser({ idUser }) {
 
     //Criar usuário
     if (!idUser) {
-      fetch(`http://api.emarketplace.local/admin/users`, {
+      fetch(`users`, {
         method: 'POST',
         mode: 'cors',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLmVtYXJrZXRwbGFjZS5sb2NhbC9hZG1pbi9sb2dpbiIsImlhdCI6MTYxNDg2Mjc4NCwiZXhwIjoxNjE0OTA1OTg0LCJuYmYiOjE2MTQ4NjI3ODQsImp0aSI6InE5NzRFQnJJSnhGUGs2aDIiLCJzdWIiOjIsInBydiI6IjU4MzFmMzc2NzAwYTU5ZjA2ZDNjYTc1MThjMDAyMTUyY2Y1YmU3ODkifQ.Fyl9wG9PLZEMiv-o_uIfSzYZ9b-E6w8v-CycPs4D0us'
+            'Authorization': ''
           },
         body: JSON.stringify({
           name,
@@ -75,13 +75,13 @@ export default function FormUser({ idUser }) {
 
     //Atualizar usuário
     if (idUser) {
-      fetch(`http://api.emarketplace.local/admin/users/${idUser}`, {
+      fetch(`users/${idUser}`, {
         method: 'PUT',
         mode: 'cors',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
             'Access-Control-Allow-Origin': '*',
-            'Authorization': 'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLmVtYXJrZXRwbGFjZS5sb2NhbC9hZG1pbi9sb2dpbiIsImlhdCI6MTYxNDg2Mjc4NCwiZXhwIjoxNjE0OTA1OTg0LCJuYmYiOjE2MTQ4NjI3ODQsImp0aSI6InE5NzRFQnJJSnhGUGs2aDIiLCJzdWIiOjIsInBydiI6IjU4MzFmMzc2NzAwYTU5ZjA2ZDNjYTc1MThjMDAyMTUyY2Y1YmU3ODkifQ.Fyl9wG9PLZEMiv-o_uIfSzYZ9b-E6w8v-CycPs4D0us'
+            'Authorization': ''
           },
         body: JSON.stringify({
           name,
